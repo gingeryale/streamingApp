@@ -1,4 +1,7 @@
-import { SIGN_IN, SIGN_OUT } from '../actions/types';
+import {
+    SIGN_IN, SIGN_OUT, CREATE_STREAM, FETCH_STREAM, FETCH_STREAMS, DELETE_STREAMS,
+    EDIT_STREAM
+} from '../actions/types';
 
 
 const INITIAL_STATE = {
