@@ -22,5 +22,5 @@ export default (state = {}, action) => {
 
 
 /*
-mapKeys returns big object. It's added to existing state.
+lodash .mapKeys() returns big object from array based 'criteria'. Then it's added to existing state.
 */
