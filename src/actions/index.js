@@ -1,5 +1,5 @@
 import streams from '../apis/streams';
-import axios from '../apis/streams';
+import history from '../history';
 import {
     SIGN_OUT, SIGN_IN, CREATE_STREAM, FETCH_STREAM, FETCH_STREAMS, DELETE_STREAM,
     EDIT_STREAM
@@ -25,7 +25,9 @@ export const createStream = (formValues) => {
         const { userId } = getState().auth;
         const res = await streams.post('/streams', { ...formValues, userId });
 
-        dispatch({ type: CREATE_STREAM, payload: res.data })
+        dispatch({ type: CREATE_STREAM, payload: res.data });
+        // programmatic navigation back to root using history
+        history.push('/');
     }
 }
 

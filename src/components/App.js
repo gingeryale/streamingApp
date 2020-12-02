@@ -1,10 +1,13 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+// take control of history object instead of react-router-dom
+//import { BrowserRouter, Route } from 'react-router-dom';
+import { Router, Route } from 'react-router-dom';
 import StreamCreate from './streams/StreamCreate';
 import StreamEdit from './streams/StreamEdit';
 import StreamDelete from './streams/StreamDelete';
 import StreamList from './streams/StreamList';
 import StreamShow from './streams/StreamShow';
+import history from '../history';
 
 import Header from './Header';
 
@@ -14,7 +17,7 @@ import Header from './Header';
 const App = () => {
   return (
     <div className="ui container">
-      <BrowserRouter>
+      <Router history={history}>
         <Header />
         <div>
           <Route path="/" exact component={StreamList} />
@@ -23,7 +26,7 @@ const App = () => {
           <Route path="/streams/delete" exact component={StreamDelete} />
           <Route path="/streams/Show" exact component={StreamShow} />
         </div>
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
