@@ -12,9 +12,9 @@ class StreamList extends React.Component {
         if (stream.userId === this.props.currentUserId) {
             return (
                 <div className="right floated content">
-                    <button className="ui blue basic button">EDIT</button>
+                    <Link to={`/streams/edit/${stream.id}`} className="ui blue basic button">EDIT</Link>
                     <button className="ui red basic button">Delete</button>
-                </div>
+                </div >
             )
         }
     }
